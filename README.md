@@ -1,12 +1,12 @@
 <h1 align="center">TechNowHorse</h1>
 <p align="center">
-  <a href="https://github.com/tiagorlampert/sAINT/blob/master/LICENSE">
+  <a href="https://github.com/Technowlogy-Pushpender/technowhorse">
     <img src="https://img.shields.io/badge/License-BSD%203-lightgrey.svg">
   </a>
-  <a href="https://github.com/tiagorlampert/sAINT/tree/master/src_template/main/java/saint">
+  <a href="https://github.com/Technowlogy-Pushpender/technowhorse">
     <img src="https://img.shields.io/badge/Release-1.0-blue.svg">
   </a>
-    <a href="https://opensource.org/licenses/BSD-3-Clause">
+    <a href="https://github.com/Technowlogy-Pushpender/technowhorse">
     <img src="https://img.shields.io/badge/Open%20Source-%E2%9D%A4-brightgreen.svg">
   </a>
 </p>
@@ -107,3 +107,19 @@ $ python paygen.py --help
 # Making Payload/RAT
 $ python paygen.py --ip 127.0.0.1 --port 8080 -e youremail@gmail.com -p YourEmailPass -w -o output_file_name
 ```
+
+## Note:- Evil File will be saved inside dist/ folder, inside technowhorse/ folder
+
+## Contributors:
+Currently this repo is maintained by me (Pushpender Singh). Owner of https://www.technowlogy.tk Website.
+
+All contributor's pull request will be accepted if their pull request is worthy for this repo.
+
+## TODO
+- [X] Add new features
+- [X] Contribute GUI 
+
+## Contact 
+singhpushpender250@gmail.com or https://technowlogy.tk/contact-us
+
+## More Features Coming Soon...
