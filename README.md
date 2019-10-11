@@ -26,6 +26,15 @@ This small python script can do really awesome work.
 
 THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS SOFTWARE AT YOUR OWN RISK. THE USE IS COMPLETE RESPONSIBILITY OF THE END-USER. THE DEVELOPERS ASSUME NO LIABILITY AND ARE NOT RESPONSIBLE FOR ANY MISUSE OR DAMAGE CAUSED BY THIS PROGRAM.
 
+## Features
+- [x] Works on Windows/Linux
+- [x] Notify New Victim Via Email
+- [x] Undectable
+- [x] Persistence
+- [x] Give Full Meterpreter Access to Attacker
+- [x] Didn't ever require metesploit installed to create trojan
+- [x] Creates Executable Binary With Zero Dependencies
+
 ## Tested On
 [![Kali)](https://www.google.com/s2/favicons?domain=https://www.kali.org/)](https://www.kali.org) **Kali Linux - ROLLING EDITION**
 
@@ -52,6 +61,8 @@ We all know how powerful the Meterpeter payload is but still the payload made fr
 
 
 ## Prerequisite
+- [x] Python 3.X
+- [x] Few External Modules
 
 ## How To Use in Linux
 ```bash
@@ -94,5 +105,5 @@ $ python -m pip install -r requirements.txt
 $ python paygen.py --help
 
 # Making Payload/RAT
-$ python paygen.py --ip 127.0.0.1 --port 8080 -e youremail@gmail.com -p YourEmailPass -l -o output_file_name
+$ python paygen.py --ip 127.0.0.1 --port 8080 -e youremail@gmail.com -p YourEmailPass -w -o output_file_name
 ```
