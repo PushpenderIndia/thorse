@@ -16,8 +16,8 @@
 <p align="center">
   TechNowHorse is a RAT (Remote Administrator Trojan) Generator for Windows/Linux systems written in Python 3.
 </p>
-
-This small python script can do really awesome work.
+              
+                        This small python script can do really awesome work.
 
 ## Disclaimer
 <p align="center">
