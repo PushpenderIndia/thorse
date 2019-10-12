@@ -116,10 +116,10 @@ Currently this repo is maintained by me (Pushpender Singh). Owner of https://www
 All contributor's pull request will be accepted if their pull request is worthy for this repo.
 
 ## TODO
-- [X] Add new features
-- [X] Contribute GUI 
+- [] Add new features
+- [] Contribute GUI 
 
 ## Contact 
-singhpushpender250@gmail.com or https://technowlogy.tk/contact-us
+singhpushpender250@gmail.com or [Contact Us](https://technowlogy.tk/contact-us)
 
 ## More Features Coming Soon...
