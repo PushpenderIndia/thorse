@@ -1,9 +1,8 @@
 <h1 align="center">TechNowHorse</h1>
 <p align="center">
-  <a href="https://python.org">
+    <a href="https://python.org">
     <img src="https://img.shields.io/badge/Python-3.7-green.svg">
   </a>
-<p align="center">
   <a href="https://github.com/Technowlogy-Pushpender/technowhorse/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/License-BSD%203-lightgrey.svg">
   </a>
