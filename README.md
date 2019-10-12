@@ -122,6 +122,13 @@ All contributor's pull request will be accepted if their pull request is worthy 
 - [ ] Add new features
 - [ ] Contribute GUI 
 
+## Removing TrojanHorse:
+* Go to start, type regedit and run the first program, this will open the registry editor.
+* Navigate to the following path Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
+  There should be an entry called winexplorer, right click this entry and select Delete.
+* Go to your user path > AppData > Roaming, you’ll see a file named “explorer.exe”, this is the RAT, right click > Delete.
+* Restart the System.
+
 ## Contact 
 singhpushpender250@gmail.com or [Contact Us](https://technowlogy.tk/contact-us)
 
