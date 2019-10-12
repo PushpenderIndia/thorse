@@ -113,6 +113,17 @@ $ python paygen.py --ip 127.0.0.1 --port 8080 -e youremail@gmail.com -p YourEmai
 
 ## Note:- Evil File will be saved inside dist/ folder, inside technowhorse/ folder
 
+## Screenshots:
+
+#### Getting Help
+![](/img/1.help.png)
+
+#### Running paygen.py Script
+![](/img/2.running_script.png)
+
+#### Getting Notification From Victim PC
+![](/img/3.getting_notification.png)
+
 ## Contributors:
 Currently this repo is maintained by me (Pushpender Singh). Owner of https://www.technowlogy.tk Website.
 
