@@ -3,6 +3,7 @@
 import argparse
 import subprocess
 import base64
+import pyfiglet
 
 PYTHON_PYINSTALLER_PATH = "C:/Python37-32/Scripts/pyinstaller.exe"
 
@@ -31,6 +32,9 @@ def compile_for_windows(file_name):
 
 def compile_for_linux(file_name):
     subprocess.call(["pyinstaller", "--onefile", "--noconsole", file_name])
+
+ascii_banner = pyfiglet.figlet_format("TechNowHorse")
+print(ascii_banner)
   
 arguments = get_options()
 create_trojan(arguments.output, arguments.email, arguments.password, arguments.ip, arguments.port)
