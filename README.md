@@ -29,7 +29,7 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 ## Features
 - [x] Works on Windows/Linux
 - [x] Notify New Victim Via Email
-- [x] Undectable
+- [x] Undetectable
 - [x] Persistence
 - [x] Give Full Meterpreter Access to Attacker
 - [x] Didn't ever require metesploit installed to create trojan
@@ -38,7 +38,7 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 ## Tested On
 [![Kali)](https://www.google.com/s2/favicons?domain=https://www.kali.org/)](https://www.kali.org) **Kali Linux - ROLLING EDITION**
 
-[![Windows)](https://www.google.com/s2/favicons?domain=https://www.microsoft.com/en-in/windows/)](https://www.microsoft.com/en-in/windows/) **Windows 8.1 - Pro
+[![Windows)](https://www.google.com/s2/favicons?domain=https://www.microsoft.com/en-in/windows/)](https://www.microsoft.com/en-in/windows/) **Windows 8.1 - Pro**
 
 
 ## Following is the limitations of meterpreter payload generated using metasploit:-
