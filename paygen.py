@@ -36,6 +36,7 @@ def compile_for_linux(file_name):
 
 ascii_banner = pyfiglet.figlet_format("TechNowHorse")
 print(ascii_banner)
+print("\t\tAuthor: Pushpender | Website: technowlogy.tk\n")
   
 arguments = get_options()
 create_trojan(arguments.output, arguments.email, arguments.password, arguments.ip, arguments.port)
