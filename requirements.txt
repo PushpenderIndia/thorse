@@ -1,0 +1,15 @@
+argparse
+subprocess
+base64
+pyfiglet
+socket
+struct
+time 
+smtplib  
+os
+shutil
+subprocess
+sys
+stat
+platform
+getpass
