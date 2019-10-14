@@ -34,9 +34,15 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 - [x] Notify New Victim Via Email
 - [x] Undetectable
 - [x] Persistence
+- [x] Sends Screenshot of Victim PC's Screen via email
 - [x] Give Full Meterpreter Access to Attacker
 - [x] Didn't ever require metesploit installed to create trojan
 - [x] Creates Executable Binary With Zero Dependencies
+
+## Note
+Due to this feature:  ****Sends Screenshot of Victim PC's Screen via email****
+
+Size of evil_file is increased from 6 mb to 60 mb. If size matters you then use technowhorse v1.1
 
 ## Tested On
 [![Kali)](https://www.google.com/s2/favicons?domain=https://www.kali.org/)](https://www.kali.org) **Kali Linux - ROLLING EDITION**
