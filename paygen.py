@@ -8,7 +8,7 @@ import pyfiglet
 PYTHON_PYINSTALLER_PATH = "C:/Python37-32/Scripts/pyinstaller.exe"
 
 def get_options():
-    parser = argparse.ArgumentParser(description='TechnowHorse v1.1')
+    parser = argparse.ArgumentParser(description='TechnowHorse v1.2')
     parser._optionals.title = "Optional Arguments"
     parser.add_argument("-w", "--windows", dest="windows", help="Generate a Windows executable.", action='store_true')
     parser.add_argument("-l", "--linux", dest="linux", help="Generate a Linux executable.", action='store_true')

