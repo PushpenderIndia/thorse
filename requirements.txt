@@ -13,3 +13,5 @@ sys
 stat
 platform
 getpass
+tempfile
+pyautogui
