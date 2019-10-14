@@ -58,9 +58,9 @@ We all know how powerful the Meterpeter payload is but still the payload made fr
   * Payload can run on LINUX as well as WINDOWS.
   * Provide Full Access, as metasploit listener could be used as well as supports custom listener (You can Create Your Own Listener)
   * Sends Email Notification, when ever payload runs on new system, with complete system info.
-  * Generates payload within 1 minute of ever less.
+  * Generates payload within 1 minute or ever less.
   * Supports all meterpreter post exploitation modules.
-  * payload Can be Created on Windows as well as Linux system.
+  * Payload Can be Created on Windows as well as Linux system.
 
 
 ## Prerequisite
