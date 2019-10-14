@@ -121,8 +121,17 @@ $ python paygen.py --ip 127.0.0.1 --port 8080 -e youremail@gmail.com -p YourEmai
 #### Running paygen.py Script
 ![](/img/2.running_script.png)
 
+#### When RAT runs, it adds Registry to become persistence
+![](/img/3.added_registry_for_persistence.png)
+
+#### Makes copy of itself and saved it inside Roming
+![](/img/4.rat_saved_roming.png)
+
+#### Report sended by RAT
+![](/img/5.report_from_rat.png)
+
 #### Getting Notification From Victim PC
-![](/img/3.getting_notification.png)
+![](/img/6.getting_notification.png)
 
 ## Contributors:
 Currently this repo is maintained by me (Pushpender Singh). Owner of https://www.technowlogy.tk Website.
