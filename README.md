@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/badge/License-BSD%203-lightgrey.svg">
   </a>
   <a href="https://github.com/Technowlogy-Pushpender/technowhorse/releases">
-    <img src="https://img.shields.io/badge/Release-1.2-blue.svg">
+    <img src="https://img.shields.io/badge/Release-1.3-blue.svg">
   </a>
     <a href="https://github.com/Technowlogy-Pushpender/technowhorse">
     <img src="https://img.shields.io/badge/Open%20Source-%E2%9D%A4-brightgreen.svg">
@@ -38,16 +38,14 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 - [x] Give Full Meterpreter Access to Attacker
 - [x] Didn't ever require metesploit installed to create trojan
 - [x] Creates Executable Binary With Zero Dependencies
-
-## Note
-Due to this feature:  ****Sends Screenshot of Victim PC's Screen via email****
-
-Size of evil_file is increased from 6 mb to 60 mb. If size matters you then use technowhorse v1.1
+- [x] Create less size ~ 5mb payload with advance functionality
 
 ## Tested On
 [![Kali)](https://www.google.com/s2/favicons?domain=https://www.kali.org/)](https://www.kali.org) **Kali Linux - ROLLING EDITION**
 
 [![Windows)](https://www.google.com/s2/favicons?domain=https://www.microsoft.com/en-in/windows/)](https://www.microsoft.com/en-in/windows/) **Windows 8.1 - Pro**
+
+[![Windows)](https://www.google.com/s2/favicons?domain=https://www.microsoft.com/en-in/windows/)](https://www.microsoft.com/en-in/windows/) **Windows 7 - Ultimate**
 
 
 ## Following is the limitations of meterpreter payload generated using metasploit:-
