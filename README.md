@@ -203,10 +203,10 @@ All contributor's pull request will be accepted if their pull request is worthy 
 ## Contact 
 singhpushpender250@gmail.com or [Contact Us](https://technowlogy.tk/contact-us)
 
-## More Features Coming Soon...
-
 ## Save a Hacker from starvation 
-![](/img/request.jpeg)
+![](/img/request.jpg)
 
-### PayPal Me; Even 1 dollar of donation would be a great help :)
-#### PayPal.me/anonyindia
+- [ ] PayPal Me, Even 1 dollar of donation would be a great help :)
+- [ ] PayPal Address: PayPal.me/anonyindia
+
+## More Features Coming Soon...
