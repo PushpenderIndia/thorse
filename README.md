@@ -131,10 +131,10 @@ $ python paygen.py --ip 127.0.0.1 --port 8080 -e youremail@gmail.com -p YourEmai
 
 
 #### Getting Help
-![](/img/1.version_1.4.PNG)
+![](/img/1.version1.4.PNG)
 
 #### Generating payload
-![](/img/2.version_1.4.PNG)
+![](/img/2.version1.4.PNG)
 
 ### Also Refer These Old Images
 
