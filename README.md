@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/badge/License-BSD%203-lightgrey.svg">
   </a>
   <a href="https://github.com/Technowlogy-Pushpender/technowhorse/releases">
-    <img src="https://img.shields.io/badge/Release-1.3-blue.svg">
+    <img src="https://img.shields.io/badge/Release-1.4-blue.svg">
   </a>
     <a href="https://github.com/Technowlogy-Pushpender/technowhorse">
     <img src="https://img.shields.io/badge/Open%20Source-%E2%9D%A4-brightgreen.svg">
@@ -39,6 +39,11 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 - [x] Didn't ever require metesploit installed to create trojan
 - [x] Creates Executable Binary With Zero Dependencies
 - [x] Create less size ~ 5mb payload with advance functionality
+- [x] Ofusticate the Payload before Generating it, hence Bypassing few more antivirus
+- [x] Generated Payload is Encryted with base64, hence makes extremely difficult to reverse engineer the payload
+- [x] Function to Kill Antivirus on Victim PC and tries to disable the security
+- [x] Awesome Colourful Interface to generate payload
+- [x] On Attacker Side: While Creating Payload, Script Automatically Detects Missing Dependencies & Installs Them
 
 ## Tested On
 [![Kali)](https://www.google.com/s2/favicons?domain=https://www.kali.org/)](https://www.kali.org) **Kali Linux - ROLLING EDITION**
@@ -117,7 +122,23 @@ $ python paygen.py --ip 127.0.0.1 --port 8080 -e youremail@gmail.com -p YourEmai
 
 ## Note:- Evil File will be saved inside dist/ folder, inside technowhorse/ folder
 
-## Screenshots:
+## How to Update
+
+* Run updater.py to Update Autmatically or Download the latest Zip from this GitHub repo
+* Note: Git Must be Installed in order to use updater.py
+
+## New Screenshots:
+
+
+#### Getting Help
+![](/img/1.version_1.2.PNG)
+
+#### Generating payload
+![](/img/2.version_1.2.PNG)
+
+### Also Refer These Old Images
+
+## ~Old Screenshots:
 
 #### Getting Help
 ![](/img/1.help.png)
@@ -146,12 +167,38 @@ All contributor's pull request will be accepted if their pull request is worthy 
 - [ ] Add new features
 - [ ] Contribute GUI 
 
-## Removing TrojanHorse:
-* Go to start, type regedit and run the first program, this will open the registry editor.
-* Navigate to the following path Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
-  There should be an entry called winexplorer, right click this entry and select Delete.
-* Go to your user path > AppData > Roaming, you’ll see a file named “explorer.exe”, this is the RAT, right click > Delete.
-* Restart the System.
+## Removing TechNowHorse in Windows:
+
+#### Method 1:
+
+   * Go to start, type regedit and run the first program, this will open the registry editor.
+   * Navigate to the following path Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run There should be an entry called winexplorer, right click this entry and select Delete.
+   * Go to your user path > AppData > Roaming, you’ll see a file named “explorer.exe”, this is the RAT, right click > Delete.
+   * Restart the System.
+
+#### Method 2:
+   * Run "RemoveTechnowHorse.bat" in Infected System and then restart the PC to stop the current Running Evil File.
+
+
+
+## Removing TechNowHorse in Linux:
+
+   * Open Autostart file with any text editor,
+     ****Autostart File Path: ~/.config/autostart/xinput.desktop****
+   * Remove these 5 lines:
+   
+            [Desktop Entry]
+            Type=Application
+            X-GNOME-Autostart-enabled=true
+            Name=Xinput
+            Exec="destination_file_name"
+        
+   * Note: **destination_file_name** is that name of evil_file which you gave 
+      to your TrojanHorse using -o parameter
+   * Reboot your system and then delete the evil file stored this this below path
+   * Destination Path, where TrojanHorse is stored : **~/.config/xnput**
+
+
 
 ## Contact 
 singhpushpender250@gmail.com or [Contact Us](https://technowlogy.tk/contact-us)
