@@ -29,7 +29,7 @@ def get_options():
 def check_dependencies():
     print(f"{YELLOW}\n[*] Checking Dependencies...")
     try:
-        import mss, essential_generators, PyInstaller, pynput, six
+        import mss, essential_generators, PyInstaller, six
         print(f"{GREEN}[+] All Dependencies are Installed on this system ;)\n")
     except Exception as e:
         print(f"[!] Error : {e}")
@@ -41,7 +41,6 @@ def check_dependencies():
                 pip.main(['install', 'mss==4.0.3'])
                 pip.main(['install', 'essential_generators==0.9.2'])
                 pip.main(['install', 'PyInstaller'])
-                pip.main(['install', 'pynput==1.4.4'])
                 pip.main(['install', 'six==1.12.0']) 
                 pip.main(['install', 'python-xlib==0.25'])
                 print(f'\n{WHITE}[ * * * * * * * * * * * * * * * * * * * * * * * * * ]\n')
