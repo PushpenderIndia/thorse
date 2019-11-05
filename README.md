@@ -81,6 +81,9 @@ We all know how powerful the Meterpeter payload is but still the payload made fr
 # Install dependencies 
 $ Install latest python 3.x
 
+# 1. Navigate to the /opt directory (optional):
+$ cd /opt/
+
 # Clone this repository
 $ git clone https://github.com/Technowlogy-Pushpender/technowhorse.git
 
@@ -88,7 +91,7 @@ $ git clone https://github.com/Technowlogy-Pushpender/technowhorse.git
 $ cd technowhorse
 
 # Installing dependencies
-$ python -m pip install -r requirements.txt
+$ bash installer_linux.sh
 
 $ chmod +x paygen.py
 $ ./paygen.py  --help    or   python paygen.py --help
