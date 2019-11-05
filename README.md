@@ -39,9 +39,9 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 - [x] Didn't ever require metesploit installed to create trojan
 - [x] Creates Executable Binary With Zero Dependencies
 - [x] Create less size ~ 5mb payload with advance functionality
-- [x] Ofusticate the Payload before Generating it, hence Bypassing few more antivirus
-- [x] Generated Payload is Encryted with base64, hence makes extremely difficult to reverse engineer the payload
-- [x] Function to Kill Antivirus on Victim PC and tries to disable the security
+- [x] Obfusticate the Payload before Compiling it, hence Bypassing few more antivirus
+- [x] Generated Payload is Encrypted with base64, hence makes extremely difficult to reverse engineer the payload
+- [x] Function to Kill Antivirus on Victim PC and tries to disable the Security Center
 - [x] Awesome Colourful Interface to generate payload
 - [x] On Attacker Side: While Creating Payload, Script Automatically Detects Missing Dependencies & Installs Them
 
