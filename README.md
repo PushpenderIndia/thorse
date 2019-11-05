@@ -33,6 +33,7 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 - [x] Works on Windows/Linux
 - [x] Notify New Victim Via Email
 - [x] Undetectable
+- [x] Does not require root or admin privileges
 - [x] Persistence
 - [x] Sends Screenshot of Victim PC's Screen via email
 - [x] Give Full Meterpreter Access to Attacker
