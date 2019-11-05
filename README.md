@@ -82,7 +82,7 @@ We all know how powerful the Meterpeter payload is but still the payload made fr
 # Install dependencies 
 $ Install latest python 3.x
 
-# 1. Navigate to the /opt directory (optional):
+# Navigate to the /opt directory (optional)
 $ cd /opt/
 
 # Clone this repository
