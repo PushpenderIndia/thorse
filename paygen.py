@@ -1,15 +1,19 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import encrypt_code
 import os
 import argparse
 import subprocess
 import shutil
 import banners
+import platform
 from essential_generators import DocumentGenerator
 
 BLUE, RED, WHITE, YELLOW, MAGENTA, GREEN, END = '\33[94m', '\033[91m', '\33[97m', '\33[93m', '\033[1;35m', '\033[1;32m', '\033[0m'
 
-PYTHON_PYINSTALLER_PATH = os.path.expanduser("C:/Python37-32/Scripts/pyinstaller.exe")
+if platform.system() == 'Windows':
+    PYTHON_PYINSTALLER_PATH = os.path.expanduser("C:/Python37-32/Scripts/pyinstaller.exe")
+elif platform.system() == 'Linux':
+    PYTHON_PYINSTALLER_PATH = os.path.expanduser("~/.wine/drive_c/Python37/Scripts/pyinstaller.exe")
 
 def get_options():
     parser = argparse.ArgumentParser(description=f'{RED}TechnowHorse v1.5')
