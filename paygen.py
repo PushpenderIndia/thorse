@@ -120,13 +120,17 @@ def compile_for_linux(file_name):
     
 def del_junk_file(file_name):
     try:
-        build = os.getcwd() + "\\build"
-        file_name = os.getcwd() + f"\\{file_name}"
-        pycache = os.getcwd() + "\\__pycache__"
-        os.remove(file_name)
-        os.remove(file_name + ".spec")    
-        shutil.rmtree(build)
-        shutil.rmtree(pycache)
+        if platform.system() == 'Windows':        
+            build = os.getcwd() + "\\build"
+            file_name = os.getcwd() + f"\\{file_name}"
+            pycache = os.getcwd() + "\\__pycache__"
+            os.remove(file_name)
+            os.remove(file_name + ".spec")    
+            shutil.rmtree(build)
+            shutil.rmtree(pycache)
+        if platform.system() == 'Linux':   
+            file_spec = file_name + ".spec"
+            os.system(f"rm -r build/ __pycache__/ {file_spec} {file_name}")                    
     except Exception:
         pass
     
@@ -207,7 +211,7 @@ if __name__ == '__main__':
         del_junk_file(arguments.output)
         print(f"{GREEN}[+] Junk Files Removed Successfully!")
         
-        if os.path.exists(f'dist/{arguments.output}.exe'):
+        if os.path.exists(f'dist/{arguments.output}.exe') or os.path.exists(f'dist/{arguments.out}'):
             print(f"\n{GREEN}[+] Generated Successfully!\n")           
             print(f"\n\n{RED}[***] Don't forget to allow less secure applications in your Gmail account.")
             print(f"{GREEN}Use the following link to do so https://myaccount.google.com/lesssecureapps")  
