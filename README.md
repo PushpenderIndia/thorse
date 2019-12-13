@@ -162,6 +162,30 @@ msf3> run
 * Run updater.py to Update Autmatically or Download the latest Zip from this GitHub repo
 * Note: Git Must be Installed in order to use updater.py
 
+## Available Arguments 
+* Optional Arguments
+
+| Short Hand  | Full Hand | Description |
+| ----------  | --------- | ----------- |
+| -h          | --help    | show this help message and exit |
+| -k KILL_AV  |--kill_av KILL_AV | AntivirusKiller : Specify AV's .exe which need to be killed. Ex:- --kill_av cmd.exe |
+| -t TIME_IN_SECONDS | --persistence TIME_PERSISTENT | Becoming Persistence After __ seconds. default=10 |
+|  -w | --windows | Generate a Windows executable. |
+|  -l | --linux   | Generate a Linux executable. |
+| -b file.txt | --bind LEGITIMATE_FILE_PATH.pdf | AutoBinder : Specify Path of Legitimate file. |
+#### Note : Either **-w/--windows** or  **-l/--linux** must be specified 
+
+* Required Arguments
+
+| Short Hand  | Full Hand | Description |
+| ----------  | --------- | ----------- |
+|             | --icon ICON   | Specify Icon Path, Icon of Evil File [Note : Must Be .ico] |
+|             | --ip IP_ADDRESS | Email address to send reports to. |
+|             | --port PORT   | Port of the IP Address given in the --ip argument. |
+| -e EMAIL    | --email EMAIL | Email address to send reports to. |
+| -p PASSWORD | --password PASSWORD | Password for the email address given in the -e argument. |
+| -o OUT      | --out OUT    | Output file name.|
+
 ## New Screenshots:
 
 
