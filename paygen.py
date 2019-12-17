@@ -211,7 +211,7 @@ if __name__ == '__main__':
         del_junk_file(arguments.output)
         print(f"{GREEN}[+] Junk Files Removed Successfully!")
         
-        if os.path.exists(f'dist/{arguments.output}.exe') or os.path.exists(f'dist/{arguments.out}'):
+        if os.path.exists(f'dist/{arguments.output}.exe') or os.path.exists(f'dist/{arguments.output}'):
             print(f"\n{GREEN}[+] Generated Successfully!\n")           
             print(f"\n\n{RED}[***] Don't forget to allow less secure applications in your Gmail account.")
             print(f"{GREEN}Use the following link to do so https://myaccount.google.com/lesssecureapps")  
