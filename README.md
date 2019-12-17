@@ -81,6 +81,13 @@ We all know how powerful the Meterpeter payload is but still the payload made fr
 - [x] Python 3.X
 - [x] Few External Modules
 
+## Please Note: 
+In Windows, Please Specify/Set Pyinstaller path in `paygen.py` [**Line 14**]
+
+Default Path is this : `PYTHON_PYINSTALLER_PATH = os.path.expanduser("C:/Python37-32/Scripts/pyinstaller.exe")`
+
+**Change it according to your system**
+
 ## How To Use in Linux
 ```bash
 # Install dependencies 
@@ -127,7 +134,8 @@ $ cd technowhorse
 # Installing dependencies
 $ python -m pip install -r requirements.txt
 
-# Open paygen.py in Text editor and Configure Line 7 "PYTHON_PYINSTALLER_PATH = "C:/Python37-32/Scripts/pyinstaller.exe" "
+# Open paygen.py in Text editor and Configure Line 14, set Pyinstaller path, Default Path is as follows :-
+# PYTHON_PYINSTALLER_PATH = os.path.expanduser("C:/Python37-32/Scripts/pyinstaller.exe") 
 
 # Getting Help Menu
 $ python paygen.py --help
