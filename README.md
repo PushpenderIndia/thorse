@@ -234,7 +234,7 @@ msf3> run
 ![](/img/6.getting_notification.png)
 
 ## Contributors:
-Currently this repo is maintained by me (Pushpender Singh). Owner of https://www.technowlogy.tk Website.
+Currently this repo is maintained by me (Pushpender Singh). 
 
 All contributor's pull request will be accepted if their pull request is worthy for this repo.
 
@@ -279,7 +279,7 @@ All contributor's pull request will be accepted if their pull request is worthy 
 [![Video Tutorial - TechnowHorse](https://i.ytimg.com/vi/kkWeVGbm_yc/maxresdefault.jpg)](https://www.youtube.com/watch?v=kkWeVGbm_yc "Video Tutorial - TechnowHorse")
 
 ## Contact 
-singhpushpender250@gmail.com or [Contact Us](https://technowlogy.tk/contact-us)
+singhpushpender250@gmail.com 
 
 ## Save a Hacker from starvation 
 ![](/img/request.jpg)
