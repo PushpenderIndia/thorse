@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/badge/License-BSD%203-lightgrey.svg">
   </a>
   <a href="https://github.com/Technowlogy-Pushpender/technowhorse/releases">
-    <img src="https://img.shields.io/badge/Release-1.5-blue.svg">
+    <img src="https://img.shields.io/badge/Release-1.6-blue.svg">
   </a>
     <a href="https://github.com/Technowlogy-Pushpender/technowhorse">
     <img src="https://img.shields.io/badge/Open%20Source-%E2%9D%A4-brightgreen.svg">
@@ -49,6 +49,13 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 - [x] **Built-in Binder** which can bind Keylogger to **Any File** [.pdf, .txt, .exe etc], Running legitimate file on front end & evil codes in back-end as a service. 
 - [x] Checks for **Already Running Instance** on System, If running instance found, then only legitimate file is executed [**Multiple Instance Prohibiter**].
 - [x] Attacker can Create/Compile for Both **Windows/Linux OS** Using Linux System, But Can only Create/Compile **Windows** Executable using Windows Machine
+- [x] **Retrieves Saved Passwords** from victim System and sends it to Attacker.
+
+| Supported Retrives, Tries to Retrive Saved Passwords from : |
+| ----------------------------------------------------------- |
+| Chrome Browser |
+| WiFi |
+#### Note: Custom Stealer is Coded, does not relies on LaZagne
 
 ## Tested On
 [![Kali)](https://www.google.com/s2/favicons?domain=https://www.kali.org/)](https://www.kali.org) **Kali Linux - ROLLING EDITION**
@@ -180,7 +187,8 @@ msf3> run
 | -t TIME_IN_SECONDS | --persistence TIME_PERSISTENT | Becoming Persistence After __ seconds. default=10 |
 |  -w | --windows | Generate a Windows executable. |
 |  -l | --linux   | Generate a Linux executable. |
-| -b file.txt | --bind LEGITIMATE_FILE_PATH.pdf | AutoBinder : Specify Path of Legitimate file. |
+| -b file.txt | --bind LEGITIMATE_FILE_PATH.pdf | AutoBinder : Specify Path of Legitimate file. [**Supported OS : Windows**] |
+|  -s | --steal-password | Steal Saved Password from Victim Machine [**Supported OS : Windows**] |
 #### Note : Either **-w/--windows** or  **-l/--linux** must be specified 
 
 * Required Arguments
@@ -277,6 +285,7 @@ singhpushpender250@gmail.com or [Contact Us](https://technowlogy.tk/contact-us)
 ![](/img/request.jpg)
 
 - [ ] PayPal Me, Even 1 dollar of donation would be a great help :)
-- [ ] PayPal Address: PayPal.me/anonyindia
+- [ ] PayPal Address: https://paypal.me/anonyindia
+- [ ] PayPal Email: singhpushpender250@gmail.com
 
 ## More Features Coming Soon...
