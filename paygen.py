@@ -36,6 +36,16 @@ def get_options():
     required_arguments.add_argument("-o", "--output", dest="output", help="Output file name.", required=True)
     return parser.parse_args()
 
+def get_python_pyinstaller_path():
+    python_path = subprocess.check_output("where python", shell=True)
+    python_path = str(python_path).split('\'')[1]
+    python_path = python_path.replace("\\n", "")
+    python_path = python_path.replace("\\r", "")
+    python_path = python_path.replace("\\\\", "/")
+    python_path = python_path.replace("python.exe", "Scripts/pyinstaller.exe")
+
+    return python_path
+
 def check_dependencies():
     print(f"{YELLOW}\n[*] Checking Dependencies...")
     try:
@@ -188,7 +198,10 @@ if __name__ == '__main__':
         if arguments.icon == None:
             arguments.icon = input(f'{RED}[!] Please Specify Icon Path {WHITE}[{GREEN}LEAVE BLANK to SET icon/exe.ico as icon{WHITE}] : ')
             if arguments.icon == "":
-                arguments.icon = "icon/exe.ico"              
+                arguments.icon = "icon/exe.ico"     
+                
+        if not os.path.exists(PYTHON_PYINSTALLER_PATH) and arguments.windows:
+            PYTHON_PYINSTALLER_PATH = get_python_pyinstaller_path()                
         
         print(f'\n{GREEN}[ * * * * * * * * * * * * * * * * * * * * * * * * * ]{GREEN}')
         print(f'\n   {YELLOW}Email:{RED} ' + arguments.email)
