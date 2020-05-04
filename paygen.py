@@ -50,7 +50,10 @@ def get_python_pyinstaller_path():
             python_path = str(python_path).split('\'')[1]
             python_path = python_path.replace("\\n", "")
             python_path = python_path.replace("\\r", "")  
-        
+        else:
+            print(f"{RED}\n[!] Unable to Find Python Pyinstaller Path, Please Update it inside paygen.py at Line 18")
+            exit()
+            
     return python_path
 
 def check_dependencies():
