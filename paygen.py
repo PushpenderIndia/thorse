@@ -37,13 +37,20 @@ def get_options():
     return parser.parse_args()
 
 def get_python_pyinstaller_path():
-    python_path = subprocess.check_output("where python", shell=True)
-    python_path = str(python_path).split('\'')[1]
-    python_path = python_path.replace("\\n", "")
-    python_path = python_path.replace("\\r", "")
-    python_path = python_path.replace("\\\\", "/")
-    python_path = python_path.replace("python.exe", "Scripts/pyinstaller.exe")
-
+    if platform.system() == 'Windows':
+        python_path = subprocess.check_output("where python", shell=True)
+        python_path = str(python_path).split('\'')[1]
+        python_path = python_path.replace("\\n", "")
+        python_path = python_path.replace("\\r", "")
+        python_path = python_path.replace("\\\\", "/")
+        python_path = python_path.replace("python.exe", "Scripts/pyinstaller.exe")
+    elif platform.system() == 'Linux':
+        python_path = subprocess.check_output("locate -i *Scripts/pyinstaller.exe*", shell=True)
+        if python_path != "" and python_path != None:
+            python_path = str(python_path).split('\'')[1]
+            python_path = python_path.replace("\\n", "")
+            python_path = python_path.replace("\\r", "")  
+        
     return python_path
 
 def check_dependencies():
@@ -201,7 +208,7 @@ if __name__ == '__main__':
                 arguments.icon = "icon/exe.ico"     
                 
         if not os.path.exists(PYTHON_PYINSTALLER_PATH) and arguments.windows:
-            PYTHON_PYINSTALLER_PATH = get_python_pyinstaller_path()                
+            PYTHON_PYINSTALLER_PATH = get_python_pyinstaller_path()            
         
         print(f'\n{GREEN}[ * * * * * * * * * * * * * * * * * * * * * * * * * ]{GREEN}')
         print(f'\n   {YELLOW}Email:{RED} ' + arguments.email)
