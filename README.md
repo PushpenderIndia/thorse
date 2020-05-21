@@ -281,11 +281,10 @@ All contributor's pull request will be accepted if their pull request is worthy 
 ## Contact 
 singhpushpender250@gmail.com 
 
-## Save a Hacker from starvation 
-![](/img/request.jpg)
+## Buy Me A Coffee
 
-- [ ] PayPal Me, Even 1 dollar of donation would be a great help :)
-- [ ] PayPal Address: https://paypal.me/anonyindia
-- [ ] PayPal Email: singhpushpender250@gmail.com
+* Support my Open Source projects by making Donation, It really motivates me to work on more projects
+* PayPal Address: https://paypal.me/anonyindia
+* PayPal Email: `singhpushpender250@gmail.com`
 
 ## More Features Coming Soon...
