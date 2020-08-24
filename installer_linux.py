@@ -31,7 +31,7 @@ def install_wine():
         
 def install_wine32_pip_and_pyinstaller():
     printInfo(f"installing wine32, python3-pip, pyinstaller ...")
-    os.system("dpkg --add-architecture i386 && apt-get update && apt-get install wine32 python3-pip pyinstaller")
+    os.system("dpkg --add-architecture i386 && apt-get update && apt-get install wine32 python3-pip pyinstaller && apt-get install python3-dev")
     
 def download_python():
     printInfo(f"downloading Python v3.7 (32 Bit) ...")
