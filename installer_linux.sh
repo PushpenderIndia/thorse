@@ -12,7 +12,7 @@ if [[ ! -d ~/.wine/drive_c/Python37-32/ ]]; then
 
 printf "\e[1;93m[*] Installing wine32, python3-pip, pyinstaller ...\e[0m"
 printf "\e[1;93m===================================================\e[0m\n"
-dpkg --add-architecture i386 && apt-get update && apt-get install wine32 python3-pip pyinstaller
+dpkg --add-architecture i386 && apt-get update && apt-get install wine32 python3-pip pyinstaller && apt-get install python3-dev
 
 printf "\e[1;93m[*] Downloading Python v3.7 (32 Bit)\e[0m"
 printf "\e[1;93m====================================\e[0m\n"
