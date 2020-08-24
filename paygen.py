@@ -200,7 +200,7 @@ if __name__ == '__main__':
         
     try:
         print(banners.get_banner())
-        print(f"\t\t{YELLOW}Author: {GREEN}Pushpender | {YELLOW}Website: {GREEN}technowlogy.tk\n")
+        print(f"\t\t{YELLOW}Author: {GREEN}Pushpender | {YELLOW}GitHub: {GREEN}@Technowlogy-Pushpender\n")
           
         arguments = get_options()
         
