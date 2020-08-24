@@ -112,6 +112,9 @@ $ cd technowhorse
 # Installing dependencies
 $ bash installer_linux.sh
 
+# If you are getting any errors while executing installer_linux.sh, try to install using installer_linux.py
+$ python3 installer_linux.py
+
 $ chmod +x paygen.py
 $ python3 paygen.py --help
 
