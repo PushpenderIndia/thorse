@@ -3,13 +3,13 @@
     <a href="https://python.org">
     <img src="https://img.shields.io/badge/Python-3.7-green.svg">
   </a>
-  <a href="https://github.com/Technowlogy-Pushpender/technowhorse/blob/master/LICENSE">
+  <a href="https://github.com/PushpenderIndia/technowhorse/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/License-BSD%203-lightgrey.svg">
   </a>
-  <a href="https://github.com/Technowlogy-Pushpender/technowhorse/releases">
+  <a href="https://github.com/PushpenderIndia/technowhorse/releases">
     <img src="https://img.shields.io/badge/Release-1.6-blue.svg">
   </a>
-    <a href="https://github.com/Technowlogy-Pushpender/technowhorse">
+    <a href="https://github.com/PushpenderIndia/technowhorse">
     <img src="https://img.shields.io/badge/Open%20Source-%E2%9D%A4-brightgreen.svg">
   </a>
 </p>
@@ -104,7 +104,7 @@ $ Install latest python 3.x
 $ cd /opt/
 
 # Clone this repository
-$ git clone https://github.com/Technowlogy-Pushpender/technowhorse.git
+$ git clone https://github.com/PushpenderIndia/technowhorse.git
 
 # Go into the repository
 $ cd technowhorse
@@ -136,7 +136,7 @@ Note: You can also use our custom icons from the icon folder, just use them like
 $ Install latest python 3.x
 
 # Clone this repository
-$ git clone https://github.com/Technowlogy-Pushpender/technowhorse.git
+$ git clone https://github.com/PushpenderIndia/technowhorse.git
 
 # Go into the repository
 $ cd technowhorse
@@ -287,7 +287,6 @@ singhpushpender250@gmail.com
 ## Buy Me A Coffee
 
 * Support my Open Source projects by making Donation, It really motivates me to work on more projects
-* PayPal Address: https://paypal.me/anonyindia
-* PayPal Email: `singhpushpender250@gmail.com`
+* PayPal Email: `shrisatender@gmail.com`
 
 ## More Features Coming Soon...
