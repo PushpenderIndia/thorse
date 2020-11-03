@@ -200,7 +200,7 @@ if __name__ == '__main__':
         
     try:
         print(banners.get_banner())
-        print(f"\t\t{YELLOW}Author: {GREEN}Pushpender | {YELLOW}GitHub: {GREEN}@Technowlogy-Pushpender\n")
+        print(f"\t\t{YELLOW}Author: {GREEN}Pushpender | {YELLOW}GitHub: {GREEN}@PushpenderIndia\n")
           
         arguments = get_options()
         
@@ -291,7 +291,7 @@ if __name__ == '__main__':
 
         else:
             print(f"\n{RED}[!] Failed To Generate Your Payload :(, Please Try Again!\n")
-            print(f"\n{GREEN}[:D] Please Contact us on https://github.com/Technowlogy-Pushpender/technowhorse\n")  
+            print(f"\n{GREEN}[:D] Please Contact us on https://github.com/PushpenderIndia/technowhorse\n")  
     
     except KeyboardInterrupt:        
         exit_greet()
