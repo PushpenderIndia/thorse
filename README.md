@@ -260,6 +260,7 @@ msf3> run
 |  -l | --linux   | Generate a Linux executable. |
 | -b file.txt | --bind LEGITIMATE_FILE_PATH.pdf | AutoBinder : Specify Path of Legitimate file. [**Supported OS : Windows**] |
 |  -s | --steal-password | Steal Saved Password from Victim Machine [**Supported OS : Windows**] |
+|  -d | --debug | Run Virus on Foreground |
 #### Note : Either **-w/--windows** or  **-l/--linux** must be specified 
 
 * Required Arguments
