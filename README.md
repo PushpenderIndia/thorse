@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/badge/License-BSD%203-lightgrey.svg">
   </a>
   <a href="https://github.com/PushpenderIndia/technowhorse/releases">
-    <img src="https://img.shields.io/badge/Release-1.6-blue.svg">
+    <img src="https://img.shields.io/badge/Release-1.7-blue.svg">
   </a>
     <a href="https://github.com/PushpenderIndia/technowhorse">
     <img src="https://img.shields.io/badge/Open%20Source-%E2%9D%A4-brightgreen.svg">
@@ -59,6 +59,8 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 
 ## Tested On
 [![Kali)](https://www.google.com/s2/favicons?domain=https://www.kali.org/)](https://www.kali.org) **Kali Linux - ROLLING EDITION**
+
+[![Windows)](https://www.google.com/s2/favicons?domain=https://www.microsoft.com/en-in/windows/)](https://www.microsoft.com/en-in/windows/) **Windows 10**
 
 [![Windows)](https://www.google.com/s2/favicons?domain=https://www.microsoft.com/en-in/windows/)](https://www.microsoft.com/en-in/windows/) **Windows 8.1 - Pro**
 
@@ -339,12 +341,5 @@ All contributor's pull request will be accepted if their pull request is worthy 
    * Reboot your system and then delete the evil file stored this this below path
    * Destination Path, where TrojanHorse is stored : **~/.config/xnput**
 
-
-
-## Video Tutorial
-[![Video Tutorial - TechnowHorse](https://i.ytimg.com/vi/kkWeVGbm_yc/maxresdefault.jpg)](https://www.youtube.com/watch?v=kkWeVGbm_yc "Video Tutorial - TechnowHorse")
-
-## Contact 
-singhpushpender250@gmail.com 
 
 ## More Features Coming Soon...
