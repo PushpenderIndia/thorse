@@ -23,7 +23,7 @@ def exit_greet():
 
 def main():
     try:
-        version = urlopen("https://raw.githubusercontent.com/Technowlogy-Pushpender/technowhorse/master/version.txt").read()
+        version = urlopen("https://raw.githubusercontent.com/PushpenderIndia/technowhorse/master/version.txt").read()
     except Exception as e:
         print("[!] Unable to Fletch Origin version.txt")
         print("[!] Please Check Your Internet Connection!")
@@ -40,7 +40,7 @@ def main():
 if __name__ == '__main__':
     try:
         print(banners.get_banner())
-        print(f"\t{YELLOW}Author: {GREEN}Pushpender | {YELLOW}Website: {GREEN}technowlogy.tk\n")
+        print(f"\t{YELLOW}Author: {GREEN}Pushpender | {YELLOW}GitHub: {GREEN}PushpenderIndia\n")
         print(f"{YELLOW}[*] Welcome to TechNowHorse's Auto Updater")
         print(f"{GREEN}[++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++]")
         print(f"{YELLOW}[*] Please Note : Git must be installed in order to use \"updater.py\"")

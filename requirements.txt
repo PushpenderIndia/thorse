@@ -1,6 +1,9 @@
-mss==4.0.3
-essential_generators==0.9.2
+mss
+colorama
+requests
+cryptography
+essential_generators
 PyInstaller
-six==1.12.0 
-python-xlib==0.25
+six
+python-xlib
 py32win
