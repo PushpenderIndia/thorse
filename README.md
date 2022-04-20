@@ -1,15 +1,15 @@
-<h1 align="center">TechNowHorse</h1>
+<h1 align="center">THorse</h1>
 <p align="center">
     <a href="https://python.org">
     <img src="https://img.shields.io/badge/Python-3.7-green.svg">
   </a>
-  <a href="https://github.com/PushpenderIndia/technowhorse/blob/master/LICENSE">
+  <a href="https://github.com/PushpenderIndia/thorse/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/License-BSD%203-lightgrey.svg">
   </a>
-  <a href="https://github.com/PushpenderIndia/technowhorse/releases">
+  <a href="https://github.com/PushpenderIndia/thorse/releases">
     <img src="https://img.shields.io/badge/Release-1.7-blue.svg">
   </a>
-    <a href="https://github.com/PushpenderIndia/technowhorse">
+    <a href="https://github.com/PushpenderIndia/thorse">
     <img src="https://img.shields.io/badge/Open%20Source-%E2%9D%A4-brightgreen.svg">
   </a>
 </p>
@@ -17,7 +17,7 @@
 
 
 <p align="center">
-  TechNowHorse is a RAT (Remote Administrator Trojan) Generator for Windows/Linux systems written in Python 3.
+  THorse is a RAT (Remote Administrator Trojan) Generator for Windows/Linux systems written in Python 3.
 </p>
               
                         This small python script can do really awesome work.
@@ -106,10 +106,10 @@ $ Install latest python 3.x
 $ cd /opt/
 
 # Clone this repository
-$ git clone https://github.com/PushpenderIndia/technowhorse.git
+$ git clone https://github.com/PushpenderIndia/thorse.git
 
 # Go into the repository
-$ cd technowhorse
+$ cd thorse
 
 # Installing dependencies
 $ bash installer_linux.sh
@@ -169,10 +169,10 @@ $ sudo apt install -t kali-rolling metasploit-framework
 $ sudo apt install python3-pip
 
 # 12. Clone this repository
-$ git clone https://github.com/PushpenderIndia/technowhorse.git
+$ git clone https://github.com/PushpenderIndia/thorse.git
 
 # 13. Go into the repository
-$ cd technowhorse
+$ cd thorse
 
 # 14. Installing dependencies
 $ bash installer_linux.sh
@@ -201,15 +201,15 @@ Note: You can also use our custom icons from the icon folder, just use them like
 $ Install latest python 3.x
 
 # Clone this repository
-$ git clone https://github.com/PushpenderIndia/technowhorse.git
+$ git clone https://github.com/PushpenderIndia/thorse.git
 
 # Go into the repository
-$ cd technowhorse
+$ cd thorse
 
 # Installing dependencies
 $ python -m pip install -r requirements.txt
 
-# Open paygen.py in Text editor and Configure Line 14, set Pyinstaller path, Default Path is as follows :-
+# Open paygen.py in Text editor and Configure Line 15, set Pyinstaller path, Default Path is as follows :-
 # PYTHON_PYINSTALLER_PATH = os.path.expanduser("C:/Python37-32/Scripts/pyinstaller.exe") 
 
 # Getting Help Menu
@@ -306,7 +306,7 @@ msf3> run
 ![](/img/6.getting_notification.png)
 
 ## Contributors:
-Currently this repo is maintained by me (Pushpender Singh). 
+Currently this repo is maintained by me (Pushpender Singh). But If you want to become contributor, then add some cool feature and make a pull request, I will review, and merge it this repo.
 
 All contributor's pull request will be accepted if their pull request is worthy for this repo.
 
@@ -324,9 +324,7 @@ All contributor's pull request will be accepted if their pull request is worthy 
    * Restart the System.
 
 #### Method 2:
-   * Run "RemoveTechnowHorse.bat" in Infected System and then restart the PC to stop the current Running Evil File.
-
-
+   * Run "RemoveTHorse.bat" in Infected System and then restart the PC to stop the current Running Evil File.
 
 ## Removing TechNowHorse in Linux:
 
@@ -347,3 +345,7 @@ All contributor's pull request will be accepted if their pull request is worthy 
 
 
 ## More Features Coming Soon...
+
+## TODO (Contributors are welcome)
+* Add more browser password stealers
+* GUI Development

@@ -64,18 +64,7 @@ figlet_drpepper = """
                                         
 
 """
-
-
-figlet_small = """
-
-  _____       _    _  _            _  _                 
- |_   _|__ __| |_ | \| |_____ __ _| || |___ _ _ ___ ___ 
-   | |/ -_) _| ' \| .` / _ \ V  V / __ / _ \ '_(_-</ -_)
-   |_|\___\__|_||_|_|\_\___/\_/\_/|_||_\___/_| /__/\___|
-                                                        										   
-
-"""
-												
+									
 
 def get_banner():
-    return random.choice([figlet_ansi_shadow, figlet_big, figlet_doom, figlet_drpepper, figlet_small])
+    return random.choice([figlet_ansi_shadow, figlet_big, figlet_doom, figlet_drpepper])

