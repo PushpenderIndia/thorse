@@ -22,6 +22,20 @@
               
                         This small python script can do really awesome work.
 
+<h1 align="center">🎃 HacktoberFest 2022 Project 🎃</h1>
+
+- Use this project to make your first contribution to an open source project on GitHub. 
+- Practice making your first pull request to a public repository before doing the real thing!
+- Celebrate [Hacktoberfest](https://hacktoberfest.com) by getting involved in the open source community by completing some simple tasks in this project.
+- This repository is open to all members of the GitHub community. 
+- Any member may contribute to this project without being a collaborator.
+
+## What is Hacktoberfest?
+- A month-long celebration from October 1st - 31st sponsored by [Digital Ocean](https://hacktoberfest.com) and [GitHub](https://github.com/blog/2433-celebrate-open-source-this-october-with-hacktoberfest) to get people involved in [Open Source](https://github.com/open-source). 
+- Create your very first pull request to any public repository on GitHub and contribute to the open source developer community.
+
+[https://hacktoberfest.com](https://hacktoberfest.com)
+
 ## Disclaimer
 <p align="center">
   :computer: This project was created only for good purposes and personal use.
