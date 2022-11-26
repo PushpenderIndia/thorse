@@ -41,12 +41,12 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 - [x] Creates Executable Binary With Zero Dependencies
 - [x] Create less size ~ 5mb payload with advance functionality
 - [x] Obfusticate the Payload before Compiling it, hence Bypassing few more antivirus
-- [x] Generated Payload is Encrypted with base64, hence makes extremely difficult to reverse engineer the payload
-- [x] Function to Kill Antivirus on Victim PC and tries to disable the Security Center
+- [x] Generated Payload is Encoded with Base64, hence makes extremely difficult to reverse engineer the payload
+- [x] Kill Antivirus on Victim PC & Tries to disable Windows Security Center
 - [x] Awesome Colourful Interface to generate payload
 - [x] On Attacker Side: While Creating Payload, Script Automatically Detects Missing Dependencies & Installs Them
 - [x] Able to add custom Icon to evil file
-- [x] **Built-in Binder** which can bind Keylogger to **Any File** [.pdf, .txt, .exe etc], Running legitimate file on front end & evil codes in back-end as a service. 
+- [x] **Built-in Binder** which can bind executable to **Any File** [.pdf, .txt, .exe etc], Running legitimate file on front end & evil codes in back-end as a service. 
 - [x] Checks for **Already Running Instance** on System, If running instance found, then only legitimate file is executed [**Multiple Instance Prohibiter**].
 - [x] Attacker can Create/Compile for Both **Windows/Linux OS** Using Linux System, But Can only Create/Compile **Windows** Executable using Windows Machine
 - [x] **Retrieves Saved Passwords** from victim System and sends it to Attacker.
