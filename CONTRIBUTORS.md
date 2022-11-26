@@ -1,4 +1,3 @@
-#### Name: Pushpender Singh
- - Place: New Delhi, India.
- - Bio: Software engineer.
+#### Big Shoutout To All the Contributors
+
  - GitHub: [PushpenderIndia](https://github.com/PushpenderIndia)
