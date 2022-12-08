@@ -1,14 +1,4 @@
-#!/usr/bin/env python
 import base64
-
-#==================================================================
-#Author : Pushpender Singh
-#Website: https://technowlogy.tk
-#==================================================================
-#Usage: Module is build to Encrypt Source Codes of Python file.
-#==================================================================
-#Github: https://github.com/Technowlogy-Pushpender/
-#==================================================================
 
 class Encrypt:
     def __init__(self):
